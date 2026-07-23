@@ -19,6 +19,8 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`timescale 1ns / 1ps
+
 module ov7670_top (
     input  wire        clk100,
     output wire        OV7670_SIOC,
@@ -81,6 +83,7 @@ module ov7670_top (
     // -------------------------------------------------------------------
     frame_buffer fb (
         .clka  (OV7670_PCLK),
+        .ena   (1'b1),
         .wea   (capture_we),
         .addra (capture_addr),
         .dina  (capture_data),
